@@ -12,7 +12,7 @@ const sendJSONresp = (req,res) =>res.json(res.rows)
 tasks.route('/:taskID')
 
     .put(db.updateTask, sendJSONresp)
-   .delete(db.deleteTask, (req, res)=> res.send(req.params.taskID))
+    .delete(db.deleteTask, (req, res)=> res.send(req.params.taskID))
 
 
 tasks.route('/')
@@ -22,3 +22,5 @@ tasks.route('/')
 
 
 module.exports = tasks;
+
+

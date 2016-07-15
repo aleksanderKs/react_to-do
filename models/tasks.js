@@ -9,6 +9,7 @@ const config = {
   database:   process.env.DB_NAME,
   user:       process.env.DB_USER,
   password:   process.env.DB_PASS,
+
 };
 
 const _db = pg(config);
@@ -34,7 +35,7 @@ module.exports = {
     _db.any(
       `INSERT INTO
       tasks (task_name, task_desc)
-      VALUES ($/name/,$/desc/)
+      VALUES ($/name/, $/desc/)
       returning *;` , req.body
       )
       .then( task=>{
